@@ -14,8 +14,8 @@ twitter = OAuth1Session(CK, CS, AT, ATS)
 
 url = "https://api.twitter.com/1.1/statuses/update.json"
 
-today = datetime.date.today()
-tweet = "おはよんよん！！" + str(today)
+dtNow = datetime.datetime.now()
+tweet = "おはよんよん！！" + dtNow.strftime('%Y年%m月%d日 %H:%M:%S')
 
 params = {
     "status": tweet
