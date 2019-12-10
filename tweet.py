@@ -3,8 +3,9 @@ from requests_oauthlib import OAuth1Session
 import requests
 import sys
 import os
+import datetime
 
-CK = os.environ["CK"]
+CK = os.environ.get("CK")
 CS = os.environ["CS"]
 AT = os.environ["AT"]
 ATS = os.environ["ATS"]
@@ -13,7 +14,8 @@ twitter = OAuth1Session(CK, CS, AT, ATS)
 
 url = "https://api.twitter.com/1.1/statuses/update.json"
 
-tweet = "おはよんよん！！"
+today = datetime.date.today()
+tweet = "おはよんよん！！" + str(today)
 
 params = {
     "status": tweet
@@ -21,7 +23,7 @@ params = {
 
 res = twitter.post(url, params=params)
 
-if res.status_code == 200:  # 正常投稿出来た場合
+if res.status_code == 200:
     print("SUCCESS")
-else:  # 正常投稿出来なかった場合
-    print("FAIRURE : %d" % res.status_code)
+else:
+    print(res)
