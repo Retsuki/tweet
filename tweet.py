@@ -2,11 +2,12 @@ import urllib
 from requests_oauthlib import OAuth1Session
 import requests
 import sys
+import os
 
-CK = "pCBRAhfzS6ADpMN4T2K6mtwEx"
-CS = "dPjCLvLZJRbr1KCVCHiWpaXElaQURSL2zz23zRu6EXyU1VQyag"
-AT = "801345492693164032-XLt0Gs9x6NBz8ousEB0QVynJ3ZnroAh"
-ATS = "ESY4u6ENZ7z7gP5ma1FSFEJj3734Cgvcja0v3FqAm6tSb"
+CK = os.environ["CK"]
+CS = os.environ["CS"]
+AT = os.environ["AT"]
+ATS = os.environ["ATS"]
 
 twitter = OAuth1Session(CK, CS, AT, ATS)
 
