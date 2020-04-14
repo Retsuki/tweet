@@ -15,7 +15,7 @@ twitter = OAuth1Session(CK, CS, AT, ATS)
 
 url = "https://api.twitter.com/1.1/statuses/update.json"
 
-tweet = "おはよんよん！！\n本日の石川県の新型コロナウイルス感染者の状況です。\n https://covid19-ishikawa.netlify.com/ \n #石川県\n新型コロナウイルス"
+tweet = "おはよんよん！！\n本日の石川県の新型コロナウイルス感染者の状況です。\n#石川県\n#石川県コロナ\n#石川県コロナウイルス\nhttps://covid19-ishikawa.netlify.com/"
 params = {
     "status": tweet,
 }
